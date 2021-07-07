@@ -12,7 +12,7 @@ function getData(recipe) {
             console.log(data, recipe);
         })
 }
-https://api.punkapi.com/v2/beers/1
+
 
 function getData(beerRecipe) {
     var requestUrl = "https://api.punkapi.com/v2/beers" + beerRecipe;
