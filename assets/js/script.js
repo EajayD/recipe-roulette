@@ -12,3 +12,17 @@ function getData(recipe) {
             console.log(data, recipe);
         })
 }
+
+
+function getBeerData(beerData){
+    var requestUrl = 'https://api.punkapi.com/v2/beers/'
+    fetch(requestUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data, beerData);
+   
+  });
+}
+
