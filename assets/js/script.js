@@ -15,7 +15,7 @@ function getData(recipe) {
 
 
 function getBeerData(beerData){
-    var requestUrl = 'https://api.punkapi.com/v2/beers/'
+    var requestUrl = 'https://api.punkapi.com/v2/beers/random'
     fetch(requestUrl)
   .then(function (response) {
     return response.json();
