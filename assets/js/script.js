@@ -22,7 +22,14 @@ function getBeerData(beerData){
   })
   .then(function (data) {
     console.log(data, beerData);
-   
+    for (var i = 0; i < data.length; i++) {
+      var beerName = document.createElement('h3');
+      var beerImage = document.createElement('img');
+      beerName.textContent = data[i].name;
+      issueTitle.textContent = data[i].image_url;
+      issueContainer.append(beerName);
+      issueContainer.append(beerImage);
+    }
   });
 }
-
+addEventListener('click', 'getBeer', getBeerData(beerData));
