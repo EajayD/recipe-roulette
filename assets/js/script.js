@@ -22,7 +22,11 @@ function formSubmit(event) {
     var recipe = foodInput.value.trim();
         if (recipe){
             getFood(recipe);
+            previous.unshift({recipe});
+            foodInput.value = "";
         }
+        save();
+        history(recipe);
 }
 
 mealSearch.addEventListener("submit", formSubmit);
@@ -37,7 +41,7 @@ function foodResults(recipeInput){
   meals.textContent = recipeInput.q;
 
   var cards = recipeInput.hits;
-  for(var i=0 ; i < cards.length - 5; i++){
+  for(var i=0 ; i < cards.length - 6; i++){
    var recipe = cards[i];
   
   console.log(recipe);
@@ -73,10 +77,48 @@ function foodResults(recipeInput){
   }
 }
 
+// empty array for searches
+var previous = [];
+// pointer to html
+var pastSearch = document.querySelector("#past-search-results");
+
+
+// function to set local storage
+function save(){
+  localStorage.setItem("previous", JSON.stringify(previous));
+};
+
+// create a button element that shows up as a clickable object in order to show its data when clicked
+function history(previous){
+  oldRecipe = document.createElement("button");
+  oldRecipe.textContent = previous;
+  oldRecipe.classList = "d-flex w-100 btn-light border p-2";
+  oldRecipe.setAttribute("data-recipe", previous); 
+  oldRecipe.setAttribute("type", "submit");
+
+  pastSearch.prepend(oldRecipe);
+}
+
+
 var drinkButton = document.getElementById('drink-button');
 
 function getBeerData(){
     var requestUrl = 'https://api.punkapi.com/v2/beers/random'
+
+// calls on the data previously searched for
+function historySearch(event){
+  var prev = event.target.getAttribute("data-recipe");
+  if (prev){
+      getFood(prev);
+  }
+}
+
+//event listener for previously searched recipes now clickable as a button, will run that history search function when clicked
+pastSearch.addEventListener("click", historySearch);
+
+function getBeerData(beerData){
+    var requestUrl = 'https://api.punkapi.com/v2/beers/'
+
     fetch(requestUrl)
   .then(function (response) {
     return response.json();
