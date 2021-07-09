@@ -56,10 +56,10 @@
 
 <div class="content-wrapper">
     <div class="content">
-        <h2 class="content-head is-center">SELECT: the INGREDIENTS to INCLUDE, to EXCLUDE; the MEAL TYPE; & a LIBATION.</h2>
+        <h2 class="content-head is-center">Begin the Roulette!</h2>
 
         <div class="pure-g">
-            <div class="l-box pure-u-1-2 pure-u-md-1-2 pure-u-lg-1-2">
+            <div class="l-box pure-u-2-3 pure-u-md-2-3 pure-u-lg-2-3">
 
                 <h3 class="content-subhead">
                     Meal Type
@@ -69,14 +69,16 @@
                 </p>
                 <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
-                      <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                      <form class="d-flex" id="meal-search">
+                        <input class="form-input" id="food" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary" type="submit">Search</button>
                       </form>
                     </div>
-                  </nav>
+                </nav>
+
             </div>
-            <div class="l-box pure-u-1-2 pure-u-md-1-2 pure-u-lg-1-2">
+
+            <div class="l-box pure-u-1-3 pure-u-md-1-3 pure-u-lg-1-3">
                 <h3 class="content-subhead">
                     <i class="fas fa-cocktail"></i>
                     Beverage
@@ -90,21 +92,18 @@
         </div>
     </div>
 
-    <div class="ribbon l-box-lrg pure-g">
-        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-            <img width="300" alt="File Icons" class="pure-img-responsive" src="/img/common/file-icons.png">
+    <div class="container-fluid">
+        
+        <div class = "row border" id = "food-results">
+            <h2 class= "col-9" id = "meals"></h2>
+            <div class = "d-flex" id = "food-append"></div>
         </div>
-        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+        
+        <div class = "row border" id = "drink-results">
+            <h2 class= "col-3" id = "alcohol"></h2>
+            <div class = "d-flex" id = "drink-append"></div>
+    </div>  
 
-            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
-
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor.
-            </p>
-        </div>
     </div>
 
     <div class="content">
@@ -135,5 +134,7 @@
     <div class="footer l-box is-center"></div>
 
 </div>
+
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
