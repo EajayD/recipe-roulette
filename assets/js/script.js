@@ -25,9 +25,9 @@ function formSubmit(event) {
 
 mealSearch.addEventListener("submit", formSubmit);
 
-function getBeerData(beerData){
+function getBeerData(beerData){//api call to the drink api
     var requestUrl = 'https://api.punkapi.com/v2/beers/random'
-    fetch(requestUrl)
+    fetch(requestUrl)//this is the actuall call/fetch
   .then(function (response) {
     return response.json();
   })
