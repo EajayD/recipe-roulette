@@ -41,7 +41,7 @@ function foodResults(recipeInput){
   meals.textContent = recipeInput.q;
 
   var cards = recipeInput.hits;
-  for(var i=0 ; i < cards.length - 6; i++){
+  for(var i=0 ; i < cards.length - 4; i++){
    var recipe = cards[i];
   
   console.log(recipe);
@@ -125,8 +125,11 @@ function getBeerData(){
   
       var beerName = document.querySelector('#alcohol');//points to the alcohol name in html
       var beerPic = document.querySelector('#drink-append');//points to the image of the drink
-      beerName.textContent = data[0].name;//
+      var description= document.querySelector('#desc');
+      beerName.textContent = data[0].name;
       beerPic.src=data[0].image_url;
+      description.textContent = data[0].description;
+
     
   });
 }
