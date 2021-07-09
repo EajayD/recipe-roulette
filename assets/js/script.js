@@ -114,7 +114,7 @@ pastSearch.addEventListener("click", historySearch);
 var drinkButton = document.getElementById('drink-button');
 
 function getBeerData(){
-    var requestUrl = 'https://api.punkapi.com/v2/beers/'
+    var requestUrl = 'https://api.punkapi.com/v2/beers/random'
 
     fetch(requestUrl)
   .then(function (response) {
@@ -133,3 +133,4 @@ function getBeerData(){
   });
 }
 drinkButton.addEventListener('click', getBeerData);
+
