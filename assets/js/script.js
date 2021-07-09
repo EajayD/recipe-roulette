@@ -32,4 +32,4 @@ function getBeerData(beerData){
     }
   });
 }
-addEventListener('click', 'getBeer', getBeerData(beerData));
+addEventListener('click', 'btn-primary', getBeerData(beerData));
