@@ -293,6 +293,14 @@ a.pure-button-primary {
     color: white;
 }
 
+#alcohol {
+    color: white;
+}
+
+#drink-append{
+    max-height: 300px;
+    
+}
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large devices, we want to over-ride some
