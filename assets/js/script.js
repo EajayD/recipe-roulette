@@ -136,3 +136,4 @@ function getBeerData(beerData){
   });
 }
 drinkButton.addEventListener('click', getBeerData);
+}
