@@ -99,6 +99,12 @@ function history(previous){
   pastSearch.prepend(oldRecipe);
 }
 
+
+var drinkButton = document.getElementById('drink-button');
+
+function getBeerData(){
+    var requestUrl = 'https://api.punkapi.com/v2/beers/random'
+
 // calls on the data previously searched for
 function historySearch(event){
   var prev = event.target.getAttribute("data-recipe");
@@ -112,13 +118,21 @@ pastSearch.addEventListener("click", historySearch);
 
 function getBeerData(beerData){
     var requestUrl = 'https://api.punkapi.com/v2/beers/'
+
     fetch(requestUrl)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log(data, beerData);
-   
+    console.log(data);
+  
+      var beerName = document.querySelector('#alcohol');//points to the alcohol name in html
+      var beerPic = document.querySelector('#drink-append');//points to the image of the drink
+      beerName.textContent = data[0].name;//
+      beerPic.src=data[0].image_url;
+
+    
+
   });
 }
-
+drinkButton.addEventListener('click', getBeerData);
