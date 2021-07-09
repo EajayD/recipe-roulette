@@ -112,7 +112,7 @@ function historySearch(event){
 pastSearch.addEventListener("click", historySearch);
 
 var drinkButton = document.getElementById('drink-button');
-
+//function that fetches drink name and image from beer api
 function getBeerData(){
     var requestUrl = 'https://api.punkapi.com/v2/beers/random'
 
@@ -127,10 +127,9 @@ function getBeerData(){
       var beerPic = document.querySelector('#drink-append');//points to the image of the drink
       beerName.textContent = data[0].name;//
       beerPic.src=data[0].image_url;
-
     
-
   });
 }
+//event listener for 'get drink' button
 drinkButton.addEventListener('click', getBeerData);
 
