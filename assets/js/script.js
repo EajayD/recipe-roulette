@@ -100,11 +100,6 @@ function history(previous){
 }
 
 
-var drinkButton = document.getElementById('drink-button');
-
-function getBeerData(){
-    var requestUrl = 'https://api.punkapi.com/v2/beers/random'
-
 // calls on the data previously searched for
 function historySearch(event){
   var prev = event.target.getAttribute("data-recipe");
@@ -116,7 +111,9 @@ function historySearch(event){
 //event listener for previously searched recipes now clickable as a button, will run that history search function when clicked
 pastSearch.addEventListener("click", historySearch);
 
-function getBeerData(beerData){
+var drinkButton = document.getElementById('drink-button');
+
+function getBeerData(){
     var requestUrl = 'https://api.punkapi.com/v2/beers/'
 
     fetch(requestUrl)
