@@ -132,7 +132,7 @@ a.pure-button-primary {
  */
 
 .splash-container {
-    background: #1f8dd6;
+    background: hsl(204, 75%, 48%);
     z-index: 1;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
@@ -152,12 +152,14 @@ a.pure-button-primary {
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
+    z-index: 0;
 }
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
     font-size: 20px;
     font-weight: bold;
+    height: 25%;
     color: #0A0A0A;
     border: 3px solid #0A0A0A;
     padding: 1em 1.6em;
@@ -168,18 +170,20 @@ a.pure-button-primary {
 
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
-    color: white;
+    color: #0A0A0A;
     letter-spacing: 0.05em;
     opacity: 0.8;
-}
+    }
 
 .splash img {
     display: block;
-    position: relative;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     margin: 10px auto;
-    /* does the width and height respond to percdents */
-    max-width: 80%; 
-    max-height: 80%;
+    height: auto;
+    width: 100%;
+    z-index: -1;
 }
 /*
  * -- CONTENT STYLES --
