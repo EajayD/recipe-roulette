@@ -128,7 +128,8 @@ function getBeerData(){
       var description= document.querySelector('#desc');
       beerName.textContent = data[0].name;
       beerPic.src=data[0].image_url;
-      description.textContent = data[0].description;
+      description.textContent = data[0].description + " Suggested Food Pairings: " + data[0].food_pairing;
+
     
   });
 }
