@@ -129,7 +129,6 @@ function getBeerData(){
       beerName.textContent = data[0].name;
       beerPic.src=data[0].image_url;
       description.textContent = data[0].description;
-
     
   });
 }
