@@ -151,7 +151,6 @@ function getBeerData(){
       description.textContent = data[0].description + " Suggested Food Pairings: " + data[0].food_pairing;
 
     
-
   });
 }
 // event listener for button to begin the getBeerData function
