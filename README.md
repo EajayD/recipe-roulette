@@ -39,7 +39,7 @@ To start simply click the deployed link below! Then Click on the get drink butto
 
 ## Preview
 
-<img src="https://media.giphy.com/media/ZJJRxYoQeDyZA2lNne/giphy.gif" alt="page functionality">
+<img src="./assets/img/giphy.gif" alt="page functionality">
 
 ## Authors
 
