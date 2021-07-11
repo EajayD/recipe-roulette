@@ -20,7 +20,7 @@ function getFood(recipe) {
         })
 }
 
-// prevent the default behavior of a form, initiate the fetch function. and help store and show local history
+// prevent the default behavior of a form, initiate the fetch function and help store and show local history
 function formSubmit(event) {
     event.preventDefault();
     var recipe = foodInput.value.trim();
@@ -28,6 +28,15 @@ function formSubmit(event) {
             getFood(recipe);
             previous.unshift({recipe});
             foodInput.value = "";
+        }
+        else {
+          swal({
+            title: "Are you not hungry?",
+            text: "Please enter something to search for",
+            icon: "warning",
+            button: "Try again",
+          });
+          return;
         }
         save();
         history(recipe);
