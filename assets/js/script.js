@@ -1,9 +1,12 @@
+// variables for API keys and ID
 var appID = "5b0bc97a";
 var appKey = "600a06288209a9a4ab877ddf6c0e29fc";
 
+// global variables
 var mealSearch = document.querySelector("#meal-search");
 var foodInput = document.querySelector("#food");
 
+// fetch function, if when response is received in API, it will run the foodResults function (see line 40)
 function getFood(recipe) {
     var requestUrl = "https://api.edamam.com/search?app_id=" + appID + "&app_key=" + appKey + "&q=" + recipe;
     fetch(requestUrl)
@@ -17,6 +20,7 @@ function getFood(recipe) {
         })
 }
 
+// prevent the default behavior of a form, initiate the fetch function. and help store and show local history
 function formSubmit(event) {
     event.preventDefault();
     var recipe = foodInput.value.trim();
@@ -29,8 +33,10 @@ function formSubmit(event) {
         history(recipe);
 }
 
+// event listener for formSubmit function
 mealSearch.addEventListener("submit", formSubmit);
 
+//global variables for foodResults function
 var meals = document.querySelector("#meals");
 var foodAppend = document.querySelector("#food-append");
 
@@ -40,16 +46,18 @@ function foodResults(recipeInput){
   foodAppend.textContent = ""
   meals.textContent = recipeInput.q;
 
+  // for loop allows the function to run and display more than one result
   var cards = recipeInput.hits;
   for(var i=0 ; i < cards.length - 4; i++){
    var recipe = cards[i];
   
   console.log(recipe);
 
+    //creating element to put results in
      var foodResultEl=document.createElement("div");
      foodResultEl.classList = "card bg-body text-dark col-2 md-2";
      
-     //display picture
+     //display picture and append it to the element we created above
      var recipePicture = document.createElement("img")
      recipePicture.classList = "card-img-top text-center";
      recipePicture.setAttribute("src", recipeInput.hits[i].recipe.image);  
@@ -66,7 +74,7 @@ function foodResults(recipeInput){
      recipeLink.setAttribute("href", recipeInput.hits[i].recipe.url);  
      recipeLink.textContent = "Link to Recipe";
 
-     //append to card
+     //append to card element we created
      foodResultEl.appendChild(recipeName);
      foodResultEl.appendChild(recipeLink);
 
@@ -112,7 +120,8 @@ function historySearch(event){
 pastSearch.addEventListener("click", historySearch);
 
 var drinkButton = document.getElementById('drink-button');
-//function that fetches drink name and image from beer api
+
+// fetch function for beer api
 function getBeerData(){
     var requestUrl = 'https://api.punkapi.com/v2/beers/random'
 
@@ -122,17 +131,19 @@ function getBeerData(){
   })
   .then(function (data) {
     console.log(data);
-  
+
       var beerName = document.querySelector('#alcohol');//points to the alcohol name in html
       var beerPic = document.querySelector('#drink-append');//points to the image of the drink
-      var description= document.querySelector('#desc');
-      beerName.textContent = data[0].name;
+      var description= document.querySelector('#desc');// points to span id in html
+      
+      // take data from API and display it on page 
+      beerName.textContent = data[0].name; 
       beerPic.src=data[0].image_url;
       description.textContent = data[0].description + " Suggested Food Pairings: " + data[0].food_pairing;
 
     
   });
 }
-//event listener for 'get drink' button
+// event listener for button to begin the getBeerData function
 drinkButton.addEventListener('click', getBeerData);
 
