@@ -309,6 +309,11 @@ a.pure-button-primary {
 .swal-overlay {
     background-color: rgba(43, 165, 137, 0.45);
   }
+
+#food-append div {
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large devices, we want to over-ride some
